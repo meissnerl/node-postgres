@@ -104,3 +104,12 @@ async function drain(pool, clients) {
 }
 
 module.exports.drain = drain
+
+/**
+ * Number of clients the pool currently has checked out.
+ */
+function inUseCount(pool) {
+  return pool.totalCount - pool.idleCount
+}
+
+module.exports.inUseCount = inUseCount
