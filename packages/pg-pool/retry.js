@@ -1,7 +1,7 @@
 'use strict'
 
 const DEFAULT_MAX_ATTEMPTS = 4
-const DEFAULT_BASE_DELAY_MS = 120
+const DEFAULT_BASE_DELAY_MS = 150
 
 /**
  * Acquire a client from the pool, retrying transient connection failures.
