@@ -92,3 +92,15 @@ module.exports = {
   warmUp,
   configFromConnectionString,
 }
+
+/**
+ * Close every client the pool has handed out, for shutdown.
+ */
+async function drain(pool, clients) {
+  for (const client of clients) {
+    client.release()
+  }
+  await pool.end()
+}
+
+module.exports.drain = drain
